@@ -1,0 +1,39 @@
+﻿@using BidKaro.Model.CustomModel;
+@model List<GlobalCodeCategoryCustomModel>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-hover table-bordered" id="MasterScreenTable">
+        <thead>
+            <tr class="">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Is Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tblShowVehicleType">
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.GlobalCodeCategoryID</td>
+                <td>
+                    @item.GlobalCodeCategoryName
+                </td>
+                <td class="text-center">@item.GlobalCodeCategoryValue</td>
+                <td class="text-center">True</td>
+                <td class="text-center">Actions Button HERE</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>No Record found</h2>
+}
+<script>
+    $(function () { initTableWithSearch("#MasterScreenTable"); });
+</script>

@@ -1,0 +1,30 @@
+﻿@model BidKaro.Model.Model.GlobalCodeCategory
+
+
+    <div class="panel">
+        <div class="panel-body panel-default padding-10">
+            <div class="row form-group2">
+                <div class="col-sm-3">
+                    <label>Name<span class="mandatory">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.GlobalCodeCategoryName, new { @maxlength = "50", @id = "txtGlobalCodeCategoryName", @class = "form-control validate[required]" })
+                </div>
+            </div>
+            <div class="row form-group2">
+                <div class="col-sm-3">
+                    <label>Value<span class="mandatory">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.GlobalCodeCategoryValue, new { @maxlength = "50", @id = "txtGlobalCodeCategoryValue", @class = "form-control validate[required]" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">  </div>
+                <div class="col-sm-9">
+                    <button class="btn btn-orange-sm" type="button" id="btnSaveCategory">Save</button>
+                    <button class="btn btn-yellow-sm" type="button" id="btnCancelCategory">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>

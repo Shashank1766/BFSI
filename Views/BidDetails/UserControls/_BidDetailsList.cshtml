@@ -1,0 +1,79 @@
+﻿@using BillingSystem.Model.CustomModel
+@model List<BidDetailsCustomModel>
+
+<div class="form">
+    <div class="table-responsive">
+        @if (Model != null && Model.Count > 0)
+        {
+            WebGrid grid = new WebGrid(Model, ajaxUpdateContainerId: "gridContent");
+            <div id="gridContent">
+                @grid.GetHtml(tableStyle: "table table-grid", headerStyle: "gridHead", footerStyle: "gridFooter", rowStyle: "gridRow", alternatingRowStyle: "gridAltRow", columns: grid.Columns(
+                                grid.Column("Id", header: "Id" , canSort: true),
+                                grid.Column("CategoryforCUG", header: "CategoryforCUG" , canSort: true),
+                                grid.Column("IncaseofMix", header: "IncaseofMix" , canSort: true),
+                                grid.Column("Location", header: "Location" , canSort: true),
+                                grid.Column("SellerName", header: "SellerName" , canSort: true),
+                                grid.Column("LoanAccountNumber", header: "LoanAccountNumber" , canSort: true),
+                                grid.Column("RegisteredOwner", header: "RegisteredOwner" , canSort: true),
+                                grid.Column("VehicleRegistrationNumber", header: "VehicleRegistrationNumber" , canSort: true),
+                                grid.Column("YearofManufacture", header: "YearofManufacture" , canSort: true),
+                                grid.Column("Make", header: "Make" , canSort: true),
+                                grid.Column("Model", header: "Model" , canSort: true),
+                                grid.Column("Variant", header: "Variant" , canSort: true),
+                                grid.Column("Colour", header: "Colour" , canSort: true),
+                                grid.Column("Mileagekms", header: "Mileagekms" , canSort: true),
+                                grid.Column("RCStatus", header: "RCStatus" , canSort: true),
+                                grid.Column("InsuranceStatus", header: "InsuranceStatus" , canSort: true),
+                                grid.Column("InsuranceValidTill", header: "InsuranceValidTill" , canSort: true),
+                                grid.Column("FuelType", header: "FuelType" , canSort: true),
+                                grid.Column("Tax", header: "Tax" , canSort: true),
+                                grid.Column("Fitness", header: "Fitness" , canSort: true),
+                                grid.Column("Permit", header: "Permit" , canSort: true),
+                                grid.Column("EngineNo", header: "EngineNo" , canSort: true),
+                                grid.Column("ChasisNo", header: "ChasisNo" , canSort: true),
+                                grid.Column("VehicleType", header: "VehicleType" , canSort: true),
+                                grid.Column("NumberofOwners", header: "NumberofOwners" , canSort: true),
+                                grid.Column("YardName", header: "YardName" , canSort: true),
+                                grid.Column("Parkingaddress", header: "Parkingaddress" , canSort: true),
+                                grid.Column("ParkingCharges", header: "ParkingCharges" , canSort: true),
+                                grid.Column("SpecialClause1", header: "SpecialClause1" , canSort: true),
+                                grid.Column("SpecialClause2", header: "SpecialClause2" , canSort: true),
+                                grid.Column("SpecialClause3", header: "SpecialClause3" , canSort: true),
+                                grid.Column("SpecialClause4", header: "SpecialClause4" , canSort: true),
+                                grid.Column("SpecialClause5", header: "SpecialClause5" , canSort: true),
+                                grid.Column("StartingPrice", header: "StartingPrice" , canSort: true),
+                                grid.Column("ReservePrice", header: "ReservePrice" , canSort: true),
+                                grid.Column("BidIncrement", header: "BidIncrement" , canSort: true),
+                                grid.Column("BundleName", header: "BundleName" , canSort: true),
+                                grid.Column("StartDateTime", header: "StartDateTime" , canSort: true),
+                                grid.Column("EndDateTime", header: "EndDateTime" , canSort: true),
+                                grid.Column("ExtensionTime", header: "ExtensionTime" , canSort: true),
+                                grid.Column("EventType", header: "EventType" , canSort: true),
+                                grid.Column("BidCount", header: "BidCount" , canSort: true),
+                                grid.Column("ShowStartPrice", header: "ShowStartPrice" , canSort: true),
+                                grid.Column("ShowCurrentPrice", header: "ShowCurrentPrice" , canSort: true),
+                                grid.Column("SellerContactPerson", header: "SellerContactPerson" , canSort: true),
+                                grid.Column("SellerContactNumber", header: "SellerContactNumber" , canSort: true),
+                                grid.Column("BidkaroContactPerson", header: "BidkaroContactPerson" , canSort: true),
+                                grid.Column("BidkaroContactNumber", header: "BidkaroContactNumber" , canSort: true),
+                                grid.Column("SellerCode", header: "SellerCode" , canSort: true),
+                                grid.Column("BuyerCommissionRate", header: "BuyerCommissionRate" , canSort: true),
+                                grid.Column("SMSBidding", header: "SMSBidding" , canSort: true),
+                                grid.Column("ImageURL", header: "ImageURL" , canSort: true),
+                                grid.Column("EnablePG", header: "EnablePG" , canSort: true),
+                
+                grid.Column(header: "Action", format: @<text>
+                <a href="#" onclick="EditBidDetails('@item.BidDetailsId')" style="float: left; margin-right: 7px; width: 15px;">
+                    <img src="../images/edit.png" /></a>
+                &nbsp;<a href="#" title="Delete" onclick="return DeleteBidDetails('@item.BidDetailsId');" style="float: left; width: 15px;"><img src="../images/delete.png" /></a>
+                </text>)
+                                ));
+            </div>            
+        }
+        else
+        {
+
+            <h2>No Record found</h2>
+        }
+    </div>
+</div>

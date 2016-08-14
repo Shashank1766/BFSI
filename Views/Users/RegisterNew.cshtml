@@ -1,0 +1,279 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Pages - Admin Dashboard UI Kit - Lock Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" href="/FrontEndpages/ico/60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/FrontEndpages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/FrontEndpages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/FrontEndpages/ico/152.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="stylesheet" href="/FrontEndcss/bootstrap.css" />
+    <link rel="stylesheet" href="/FrontEndcss/bootstrap-glyphicons.css" />
+    <link href="/FrontEndcss/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/FrontEndcss/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link class="main-stylesheet" href="/FrontEndcss/pages.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/FrontEndstyle.css" />
+
+</head>
+<body class="fixed-header ">
+    <div class="container full-height sm-p-t-30">
+        <div class="container-sm-height full-height">
+            <div class="row p-t-5">
+                <!--<img src="images/logo.png" alt="logo" data-src="images/logo.png" data-src-retina="images/logo.png" width="166" height="45">
+                <div class="clear: both;"></div>-->
+
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12"><h5>Registeration</h5></div>
+                    </div>
+                   @using (Html.BeginForm("Register", "Users", FormMethod.Post, new { enctype = "multipart/form-data", id = "form-register" }))
+                   {
+                        <div class="panel-body panel-default padding-10">
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>Mobile Number<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" name="Phone" id="Phone" placeholder="+91 1234567890" onblur="ValidateMobile();" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>User ID<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" name="UserId" id="UserId" placeholder="John" class="form-control" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <a href="" class="check-availability">Check Availability</a>
+                                </div>
+                            </div>
+
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>Name<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select data-init-plugin="select2" class="form-control">
+                                        <option value="AK">Title</option>
+                                        <option value="HI">Mr.</option>
+                                        <option value="CT">Miss</option>
+                                        <option value="DE">Mrs.</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" name="Name" id="Name" placeholder="John Smith" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>State<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select data-init-plugin="select2"  id="State" class="form-control">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI">Australia</option>
+
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>City<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select data-init-plugin="select2" id="City" class="form-control">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI">Australia</option>
+
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group2">
+
+                                <div class="col-sm-3">
+                                    <label>Email<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="email" id="Email" name="Email" placeholder="We will send loging details to you" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>Interested In<span class="mandatory">*</span></label>
+                                </div>
+                                <div class=" col-sm-9 checkbox checkbox_style">
+                                    <input type="checkbox" id="checkbox1" name="InterestedIn" value="1">
+                                    <label for="checkbox1">Buying</label>
+                                    <input type="checkbox" id="checkbox2" name="InterestedIn" value="2">
+                                    <label for="checkbox2">Selling</label>
+                                </div>
+                            </div>
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>Entity<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9 radio radiobox_style">
+                                    <input type="radio" id="yes"  name="EntityType" value="yes">
+                                    <label for="yes">Individual</label>
+                                    <input type="radio" id="no"  name="EntityType" value="no" checked="checked">
+                                    <label for="no">Corporate</label>
+                                </div>
+                                <span class="col-sm-9 pull-right help-block">Upload documents image size should be less than or equal to 500kb</span>
+                            </div>
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>PAN Number<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="PanNumber" name="PanNumber" placeholder="Enter PAN Number Manually" class="form-control" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="file" accept="application/pdf" name="pannumber" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>Adress Proof</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select data-init-plugin="select2" id="AddressProof" class="form-control">
+                                        <option value="AK">AADHAR CARD</option>
+                                        <option value="HI">DIVING LICENCE</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" placeholder="Enter Reference No.">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="file" accept="application/pdf" name="Addressproof" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>Willing to participate in<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-9 checkbox checkbox_style">
+                                    <input type="checkbox" id="checkbox3" name="PartcipateIn" value="1">
+                                    <label for="checkbox3">2 WH</label>
+                                    <input type="checkbox" id="checkbox4" name="PartcipateIn" value="2">
+                                    <label for="checkbox4">3 WH</label>
+                                    <input type="checkbox" id="checkbox5" name="PartcipateIn" value="2">
+                                    <label for="checkbox5">4 WH</label>
+                                    <input type="checkbox" id="checkbox6" name="PartcipateIn" value="2">
+                                    <label for="checkbox6">CV</label>
+                                </div>
+                            </div>
+
+                            <div class="row form-group2">
+                                <div class="col-sm-3">
+
+                                    <label>Security Code<span class="mandatory">*</span></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="g-recaptcha" data-sitekey="6LfynCYTAAAAACU3JLCCtcSLjbwZhtRufhBlMvud"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">  </div>
+                                <div class="col-sm-9">
+                                    <div class="checkbox check-success">
+                                        <input type="checkbox" id="checkbox7" value="1">
+                                        <label for="checkbox7">I agree to the  Terms and Conditions</label>
+                                    </div>
+                                    <button class="btn-orange-sm" type="submit" id="btnRegister">Submit</button>
+                                    <button class="btn btn-yellow-sm" type="submit" id="btnReset">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                   }
+                </div>
+                <div class="col-sm-3">
+                    <h5>Requirements</h5>
+                    <div>
+                        <div class="panel panel-default">
+                            <div class="panel-body padding-10">
+                                <h5 class="bold sm-p-t-10 heading_font">Registeration Forms</h5>
+                                <ul>
+                                    <li>Personal Detail Form <a href="">Download</a></li>
+                                    <li>Participant Request letter <a href="">Download</a></li>
+                                </ul>
+                                <h5 class="bold sm-p-t-20 heading_font">Compulsory KYC Document <span class="orange">*</span></h5>
+                                <ul>
+                                    <li>PAN card copy <span class="orange">(Mandatory)</span></li>
+                                    <li>Photo ID/Address Proof <span style="display: block;">(<em class="orange">*</em> Note: Self Attested copies required)</span></li>
+                                    <li>Charges</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                        <!--    <div class="panel panel-default col-sm-12">
+                            <div class="panel-body">
+                              <div class="checkbox check-success">
+                                <input type="checkbox" value="1" id="checkbox7">
+                                <label for="checkbox7">I agree to the  Terms and Conditions</label>
+                              </div>
+                                <button class="btn btn-orange" type="submit">Submit</button>
+                                <button class="btn btn-yellow" type="submit">Reset</button>
+                            </div>
+                          </div>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- START OVERLAY -->
+    <!-- END OVERLAY -->
+    <!-- BEGIN VENDOR JS -->
+    <script src="/FrontEndjs/jquery.js"></script>
+    <script src="/FrontEndjs/bootstrap.js"></script>
+    <script src="/FrontEndjs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/FrontEndjs/select2.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- END VENDOR JS -->
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <!--<script src="js/form_elements.js" type="text/javascript"></script>-->
+    <script src="/FrontEndjs/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/FrontEndjs/pages.min.js"></script>
+    <script src="/Scripts/ToastNotification/toastr.js"></script>
+    <script src="/Scripts/Common/Base.js"></script>
+    <script src="/Scripts/Register/Register.js"></script>
+    <script src="/Scripts/ClearForm.js"></script>
+    <script src="~/Scripts/jquery.maskedinput-1.2.2.js"></script>
+</body>
+</html>

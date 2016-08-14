@@ -1,0 +1,146 @@
+﻿@using BillingSystem.Model
+@model BidDetails
+
+<style>
+    .btn-group {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .clear {
+        clear: both;
+    }
+    select {
+    margin-bottom: 10px;}
+</style>
+<div class="form" id="BidDetailsFormDiv">
+    @*// BBCOLUMNSHERE*@
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>Id:</label>
+        @Html.TextBoxFor(m => m.Id, new { @maxlength = "10", @id = "txtId" })
+      </div>
+      <div class="rowTable">
+        <label>CategoryforCUG:</label>
+        @Html.TextBoxFor(m => m.CategoryforCUG, new { @maxlength = "50", @id = "txtCategoryforCUG" })
+      </div>
+      <div class="rowTable">
+        <label>IncaseofMix:</label>
+        @Html.TextBoxFor(m => m.IncaseofMix, new { @maxlength = "50", @id = "txtIncaseofMix" })
+      </div>
+      <div class="rowTable">
+        <label>Location:</label>
+        @Html.TextBoxFor(m => m.Location, new { @maxlength = "50", @id = "txtLocation" })
+      </div>
+      <div class="rowTable">
+        <label>SellerName:</label>
+        @Html.TextBoxFor(m => m.SellerName, new { @maxlength = "50", @id = "txtSellerName" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>LoanAccountNumber:</label>
+        @Html.TextBoxFor(m => m.LoanAccountNumber, new { @maxlength = "200", @id = "txtLoanAccountNumber" })
+      </div>
+      <div class="rowTable">
+        <label>RegisteredOwner:</label>
+        @Html.TextBoxFor(m => m.RegisteredOwner, new { @maxlength = "200", @id = "txtRegisteredOwner" })
+      </div>
+      <div class="rowTable">
+        <label>VehicleRegistrationNumber:</label>
+        @Html.TextBoxFor(m => m.VehicleRegistrationNumber, new { @maxlength = "100", @id = "txtVehicleRegistrationNumber" })
+      </div>
+      <div class="rowTable">
+        <label>YearofManufacture:</label>
+        @Html.TextBoxFor(m => m.YearofManufacture, new { @maxlength = "4", @id = "txtYearofManufacture" })
+      </div>
+      <div class="rowTable">
+        <label>Make:</label>
+        @Html.TextBoxFor(m => m.Make, new { @maxlength = "100", @id = "txtMake" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>Model:</label>
+        @Html.TextBoxFor(m => m.Model, new { @maxlength = "100", @id = "txtModel" })
+      </div>
+      <div class="rowTable">
+        <label>Variant:</label>
+        @Html.TextBoxFor(m => m.Variant, new { @maxlength = "100", @id = "txtVariant" })
+      </div>
+      <div class="rowTable">
+        <label>Colour:</label>
+        @Html.TextBoxFor(m => m.Colour, new { @maxlength = "100", @id = "txtColour" })
+      </div>
+      <div class="rowTable">
+        <label>Mileagekms:</label>
+        @Html.TextBoxFor(m => m.Mileagekms, new { @maxlength = "50", @id = "txtMileagekms" })
+      </div>
+      <div class="rowTable">
+        <label>RCStatus:</label>
+        @Html.TextBoxFor(m => m.RCStatus, new { @maxlength = "50", @id = "txtRCStatus" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>InsuranceStatus:</label>
+        @Html.TextBoxFor(m => m.InsuranceStatus, new { @maxlength = "50", @id = "txtInsuranceStatus" })
+      </div>
+      <div class="rowTable">
+        <label>InsuranceValidTill:</label>
+        @Html.TextBoxFor(m => m.InsuranceValidTill, new { @maxlength = "50", @id = "txtInsuranceValidTill" })
+      </div>
+      <div class="rowTable">
+        <label>FuelType:</label>
+        @Html.TextBoxFor(m => m.FuelType, new { @maxlength = "50", @id = "txtFuelType" })
+      </div>
+      <div class="rowTable">
+        <label>Tax:</label>
+        @Html.TextBoxFor(m => m.Tax, new { @maxlength = "50", @id = "txtTax" })
+      </div>
+      <div class="rowTable">
+        <label>Fitness:</label>
+        @Html.TextBoxFor(m => m.Fitness, new { @maxlength = "50", @id = "txtFitness" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>Permit:</label>
+        @Html.TextBoxFor(m => m.Permit, new { @maxlength = "50", @id = "txtPermit" })
+      </div>
+      <div class="rowTable">
+        <label>EngineNo:</label>
+        @Html.TextBoxFor(m => m.EngineNo, new { @maxlength = "100", @id = "txtEngineNo" })
+      </div>
+      <div class="rowTable">
+        <label>ChasisNo:</label>
+        @Html.TextBoxFor(m => m.ChasisNo, new { @maxlength = "100", @id = "txtChasisNo" })
+      </div>
+      <div class="rowTable">
+        <label>VehicleType:</label>
+        @Html.TextBoxFor(m => m.VehicleType, new { @maxlength = "100", @id = "txtVehicleType" })
+      </div>
+      <div class="rowTable">
+        <label>NumberofOwners:</label>
+        @Html.TextBoxFor(m => m.NumberofOwners, new { @maxlength = "50", @id = "txtNumberofOwners" })
+      </div>
+   </div>
+    <div class="clear"></div>
+
+    <div class="btn-group">
+        <div style="float: left;">
+            @if (Model.BidDetailsID != null && Model.BidDetailsID != 0)
+            {  
+                <input type="submit" class="btn btn-primary edit-btn marginBtn" value="Update" onclick="return SaveBidDetails();" />                
+            }
+            else
+            {
+                <input type="submit" onclick="return SaveBidDetails();" class="btn btn-primary edit-btn marginBtn" value="Save" />                
+            }
+            <button name="ClientCancel" class="btn btn-primary edit-btn marginBtn" type="button" onclick="return ClearAll();">Cancel</button>            
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,97 @@
+﻿@using BillingSystem.Model
+@model AuditLog
+
+<style>
+    .btn-group {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .clear {
+        clear: both;
+    }
+    select {
+    margin-bottom: 10px;}
+</style>
+<div class="form" id="AuditLogFormDiv">
+    @*// BBCOLUMNSHERE*@
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>ID:</label>
+        @Html.TextBoxFor(m => m.ID, new { @maxlength = "10", @id = "txtID" })
+      </div>
+      <div class="rowTable">
+        <label>UserId:</label>
+        @Html.TextBoxFor(m => m.UserId, new { @maxlength = "10", @id = "txtUserId" })
+      </div>
+      <div class="rowTable">
+        <label>CreatedDate:</label>
+        @Html.TextBoxFor(m => m.CreatedDate,"{0:MM/dd/yyyy}", new { @maxlength = "10", @id = "dtCreatedDate" })
+      </div>
+      <div class="rowTable">
+        <label>TableName:</label>
+        @Html.TextBoxFor(m => m.TableName, new { @maxlength = "500", @id = "txtTableName" })
+      </div>
+      <div class="rowTable">
+        <label>FieldName:</label>
+        @Html.TextBoxFor(m => m.FieldName, new { @maxlength = "500", @id = "txtFieldName" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>PrimaryKey:</label>
+        @Html.TextBoxFor(m => m.PrimaryKey, new { @maxlength = "10", @id = "txtPrimaryKey" })
+      </div>
+      <div class="rowTable">
+        <label>OldValue:</label>
+        @Html.TextBoxFor(m => m.OldValue, new { @maxlength = "3999", @id = "txtOldValue" })
+      </div>
+      <div class="rowTable">
+        <label>NewValue:</label>
+        @Html.TextBoxFor(m => m.NewValue, new { @maxlength = "3999", @id = "txtNewValue" })
+      </div>
+      <div class="rowTable">
+        <label>PrimaryId:</label>
+        @Html.TextBoxFor(m => m.PrimaryId, new { @maxlength = "10", @id = "txtPrimaryId" })
+      </div>
+      <div class="rowTable">
+        <label>SecondaryId:</label>
+        @Html.TextBoxFor(m => m.SecondaryId, new { @maxlength = "10", @id = "txtSecondaryId" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>EventType:</label>
+        @Html.TextBoxFor(m => m.EventType, new { @maxlength = "20", @id = "txtEventType" })
+      </div>
+      <div class="rowTable">
+        <label>ExtValue1:</label>
+        @Html.TextBoxFor(m => m.ExtValue1, new { @maxlength = "50", @id = "txtExtValue1" })
+      </div>
+      <div class="rowTable">
+        <label>ExtValue2:</label>
+        @Html.TextBoxFor(m => m.ExtValue2, new { @maxlength = "50", @id = "txtExtValue2" })
+      </div>
+      <div class="rowTable">
+        <label>ExtValue3:</label>
+        @Html.TextBoxFor(m => m.ExtValue3, new { @maxlength = "50", @id = "txtExtValue3" })
+      </div>
+    <div class="clear"></div>
+
+    <div class="btn-group">
+        <div style="float: left;">
+            @if (Model.AuditLogID != null && Model.AuditLogID != 0)
+            {  
+                <input type="submit" class="btn btn-primary edit-btn marginBtn" value="Update" onclick="return SaveAuditLog();" />                
+            }
+            else
+            {
+                <input type="submit" onclick="return SaveAuditLog();" class="btn btn-primary edit-btn marginBtn" value="Save" />                
+            }
+            <button name="ClientCancel" class="btn btn-primary edit-btn marginBtn" type="button" onclick="return ClearAll();">Cancel</button>            
+        </div>
+    </div>
+
+
+
+</div>

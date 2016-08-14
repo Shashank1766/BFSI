@@ -1,0 +1,280 @@
+﻿@model BidKaro.Model.CustomModel.RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Pages - Admin Dashboard UI Kit - Lock Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" href="/FrontEnd/pages/ico/60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/FrontEnd/pages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/FrontEnd/pages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/FrontEnd/pages/ico/152.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="stylesheet" href="/FrontEnd/css/bootstrap.css" />
+    <link rel="stylesheet" href="/FrontEnd/css/bootstrap-glyphicons.css" />
+    <link href="/FrontEnd/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/FrontEnd/css/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link class="main-stylesheet" href="/FrontEnd/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="/FrontEnd/css/toastNotification/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/FrontEnd/style.css" />
+    <link href="/Scripts/ValidationEngine/css/validationEngine.jquery.css" rel="stylesheet" />
+    <style>
+        input[type="file"] {
+            text-overflow: ellipsis !important;
+            width: 201px;
+        }
+
+        select {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            padding: 2px 30px 2px 2px !important;
+            background: transparent url("/FrontEnd/images/dropdown_arrow.png") no-repeat right center !important;
+        }
+    </style>
+</head>
+<body class="fixed-header" onload="disableBackButton();">
+    <div class="container full-height sm-p-t-30">
+        <div class="container-sm-height full-height">
+            <div class="row p-t-5">
+                <!--<img src="images/logo.png" alt="logo" data-src="images/logo.png" data-src-retina="images/logo.png" width="166" height="45">
+                <div class="clear: both;"></div>-->
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12"><h5 class="m-t-0">Registeration</h5></div>
+                    </div>
+                    @using (Html.BeginForm("Register", "Users", FormMethod.Post, new { enctype = "multipart/form-data", id = "form-register" }))
+                    {
+                        <div class="panel">
+                            <div class="panel-body panel-default padding-10">
+                                <div class="row form-group2">
+                                    <input type="hidden" name="hidViewTitle" id="hidViewTitle" value="@ViewBag.result" />
+                                    <div class="col-sm-3">
+                                        <label>Mobile Number<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.Phone, new { @maxlength = "50", @id = "txtDrugCode", @class = "form-control validate[required]", @placeholder = "+91 1234567890" })
+                                        @*<input type="text" name="Phone" id="Phone" onblur="ValidateMobile();" class="form-control validate[required]" >*@
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>User ID<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        @Html.TextBoxFor(m => m.UserId, new { @maxlength = "20", @id = "UserId", @class = "form-control validate[required]", @placeholder = "John" , onblur = "ValidateUserId();" })
+                                        @*<input type="text" name="UserId" id="UserId" placeholder="John" class="form-control validate[required]"  required>*@
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="" class="check-availability">Check Availability</a>
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Email<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.Email, new { @maxlength = "50", @id = "Email", @class = "form-control validate[required,custom[email]]", @placeholder = "We will send loging details to you", onblur = "ValidateEmail();" })
+                                    </div>
+                                </div> 
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>PAN Number<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        @Html.TextBoxFor(m => m.PanNumber, new { @maxlength = "50", @id = "PanNumber", @class = "form-control validate[required]", @placeholder = "Enter PAN Number Manually" })
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="file" accept="application/pdf" name="pannumber" class="">
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Name<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" id="Title" name="Title">
+                                            <option value="0">Title</option>
+                                            <option value="1">Mr.</option>
+                                            <option value="2">Miss</option>
+                                            <option value="3">Mrs.</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @Html.TextBoxFor(m => m.FirstName, new { @maxlength = "50", @id = "FirstName", @class = "form-control validate[required]", @placeholder = "John" })
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @Html.TextBoxFor(m => m.LastName, new { @maxlength = "50", @id = "LastName", @class = "form-control validate[required]", @placeholder = "Smith" })
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>State<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        @*@Html.DropDownListFor(m => m.State, new { @id = "StateID", @class = "form-control validate[required]" })*@
+                                        <select id="State"  name="State" class="form-control validate[required]">
+                                            <option value="0">Select</option>
+                                            <option value="1">Alaska</option>
+                                            <option value="2">Australia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>City<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <select id="City" name="City" class="form-control validate[required]">
+                                            <option value="0">Select</option>
+                                            <option value="1">Alaska</option>
+                                            <option value="2">Australia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Address<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(m => m.Address, new { @maxlength = "50", @id = "Address", @class = "form-control validate[required]", @placeholder = "Address" })
+                                        @*<input type="text" id="Address" name="Address" placeholder="Address" class="form-control" required>*@
+                                    </div>
+                                </div> 
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Interested In<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 checkbox checkbox_style">
+                                        <input type="checkbox" id="checkbox1" name="InterestedIn" value="1">
+                                        <label for="checkbox1">Buying</label>
+                                        <input type="checkbox" id="checkbox2" name="InterestedIn" value="2">
+                                        <label for="checkbox2">Selling</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Entity<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 radio radiobox_style">
+                                        <input type="radio" id="yes" name="EntityType" value="yes">
+                                        <label for="yes">Individual</label>
+                                        <input type="radio" id="no" name="EntityType" value="no" checked="checked">
+                                        <label for="no">Corporate</label>
+                                    </div>
+                                    <span class="col-sm-9 pull-right help-block">Upload documents image size should be less than or equal to 500kb</span>
+                                </div>
+                               
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Adress Proof</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select id="AddressProof" class="form-control">
+                                            <option value="AK">AADHAR CARD</option>
+                                            <option value="HI">DIVING LICENCE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @Html.TextBoxFor(m => m.AddressProof, new { @maxlength = "500", @id = "AddressProof", @class = "form-control", @placeholder = "Enter Reference No." })
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="file" accept="application/pdf" name="Addressproof" class="">
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Willing to participate in<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 checkbox checkbox_style">
+                                        <input type="checkbox" id="checkbox3" name="PartcipateIn" value="1">
+                                        <label for="checkbox3">2 WH</label>
+                                        <input type="checkbox" id="checkbox4" name="PartcipateIn" value="2">
+                                        <label for="checkbox4">3 WH</label>
+                                        <input type="checkbox" id="checkbox5" name="PartcipateIn" value="2">
+                                        <label for="checkbox5">4 WH</label>
+                                        <input type="checkbox" id="checkbox6" name="PartcipateIn" value="2">
+                                        <label for="checkbox6">CV</label>
+                                        <input type="checkbox" id="checkbox7" name="PartcipateIn" value="2">
+                                        <label for="checkbox7">FE</label>
+                                        <input type="checkbox" id="checkbox8" name="PartcipateIn" value="2">
+                                        <label for="checkbox8">CE</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group2">
+                                    <div class="col-sm-3">
+                                        <label>Security Code<span class="mandatory">*</span></label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="g-recaptcha" data-sitekey="6LfynCYTAAAAACU3JLCCtcSLjbwZhtRufhBlMvud"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">  </div>
+                                    <div class="col-sm-9">
+                                        <div class="checkbox check-success m-t-0">
+                                            <input type="checkbox" id="chkAgree" value="1">
+                                            <label for="chkAgree">I agree to the  Terms and Conditions</label>
+                                        </div>
+                                        <button class="btn btn-orange-sm" type="submit" id="btnRegister">Submit</button>
+                                        <button class="btn btn-yellow-sm" type="submit" id="btnReset">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-sm-3">
+                    <h5>Requirements</h5>
+                    <div>
+                        <div class="panel panel-default">
+                            <div class="panel-body padding-10">
+                                <h5 class="bold sm-p-t-10 heading_font">Registeration Forms</h5>
+                                <ul>
+                                    <li>Personal Detail Form <a href="">Download</a></li>
+                                    <li>Participant Request letter <a href="">Download</a></li>
+                                </ul>
+                                <h5 class="bold sm-p-t-20 heading_font">Compulsory KYC Document <span class="orange">*</span></h5>
+                                <ul>
+                                    <li>PAN card copy <span class="orange">(Mandatory)</span></li>
+                                    <li>Photo ID/Address Proof <span style="display: block;">(<em class="orange">*</em> Note: Self Attested copies required)</span></li>
+                                </ul>
+                                <h5 class="bold sm-p-t-10 heading_font">Charges</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- START OVERLAY -->
+    <!-- END OVERLAY -->
+    <!-- BEGIN VENDOR JS -->
+    <script src="/FrontEnd/js/jquery.js"></script>
+    <script src="/FrontEnd/js/bootstrap.js"></script>
+    <script src="/FrontEnd/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- END VENDOR JS -->
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    @*<script src="/Scripts/jquery.validate.js"></script>*@
+    <script src="/Scripts/ValidationEngine/js/jquery.validationEngine.js"></script>
+    <script src="/Scripts/ValidationEngine/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="/FrontEnd/js/pages.min.js"></script>
+    @*<script src="/Scripts/additional-methods.js"></script>*@
+    <script src="/Scripts/ToastNotification/toastr.js"></script>
+    <script src="/Scripts/Common/Base.js"></script>
+    <script src="/Scripts/ClearForm.js"></script>
+    <script src="/Scripts/jquery.maskedinput-1.2.2.js"></script>
+    <script src="/Scripts/Register/Register.js"></script>
+</body>
+</html>

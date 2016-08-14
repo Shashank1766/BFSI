@@ -1,0 +1,145 @@
+﻿
+
+<style>
+    .btn-group {
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .clear {
+        clear: both;
+    }
+    select {
+    margin-bottom: 10px;}
+</style>
+<div class="form" id="UsersFormDiv">
+    @*// BBCOLUMNSHERE*@
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>Id:</label>
+        @Html.TextBoxFor(m => m.Id, new { @maxlength = "10", @id = "txtId" })
+      </div>
+      <div class="rowTable">
+        <label>UserName:</label>
+        @Html.TextBoxFor(m => m.UserName, new { @maxlength = "200", @id = "txtUserName" })
+      </div>
+      <div class="rowTable">
+        <label>FirstName:</label>
+        @Html.TextBoxFor(m => m.FirstName, new { @maxlength = "100", @id = "txtFirstName" })
+      </div>
+      <div class="rowTable">
+        <label>LastName:</label>
+        @Html.TextBoxFor(m => m.LastName, new { @maxlength = "100", @id = "txtLastName" })
+      </div>
+      <div class="rowTable">
+        <label>MobileNumber:</label>
+        @Html.TextBoxFor(m => m.MobileNumber, new { @maxlength = "200", @id = "txtMobileNumber" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>EmailId:</label>
+        @Html.TextBoxFor(m => m.EmailId, new { @maxlength = "500", @id = "txtEmailId" })
+      </div>
+      <div class="rowTable">
+        <label>CountryID:</label>
+        @Html.TextBoxFor(m => m.CountryID, new { @maxlength = "10", @id = "txtCountryID" })
+      </div>
+      <div class="rowTable">
+        <label>StateID:</label>
+        @Html.TextBoxFor(m => m.StateID, new { @maxlength = "10", @id = "txtStateID" })
+      </div>
+      <div class="rowTable">
+        <label>CityID:</label>
+        @Html.TextBoxFor(m => m.CityID, new { @maxlength = "10", @id = "txtCityID" })
+      </div>
+      <div class="rowTable">
+        <label>Password:</label>
+        @Html.TextBoxFor(m => m.Password, new { @maxlength = "500", @id = "txtPassword" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>DateCreated:</label>
+        @Html.TextBoxFor(m => m.DateCreated,"{0:MM/dd/yyyy}", new { @maxlength = "10", @id = "dtDateCreated" })
+      </div>
+      <div class="rowTable">
+        <label>Enabled:</label>
+        @Html.TextBoxFor(m => m.Enabled, new { @maxlength = "10", @id = "txtEnabled" })
+      </div>
+      <div class="rowTable">
+        <label>Approved:</label>
+        @Html.TextBoxFor(m => m.Approved, new { @maxlength = "10", @id = "txtApproved" })
+      </div>
+      <div class="rowTable">
+        <label>EmailVerified:</label>
+        @Html.TextBoxFor(m => m.EmailVerified, new { @maxlength = "10", @id = "txtEmailVerified" })
+      </div>
+      <div class="rowTable">
+        <label>Title:</label>
+        @Html.TextBoxFor(m => m.Title, new { @maxlength = "20", @id = "txtTitle" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>FailedLogonAttemptCount:</label>
+        @Html.TextBoxFor(m => m.FailedLogonAttemptCount, new { @maxlength = "10", @id = "txtFailedLogonAttemptCount" })
+      </div>
+      <div class="rowTable">
+        <label>SecurityQuestionLookupItemId:</label>
+        @Html.TextBoxFor(m => m.SecurityQuestionLookupItemId, new { @maxlength = "10", @id = "txtSecurityQuestionLookupItemId" })
+      </div>
+      <div class="rowTable">
+        <label>SecurityAnswer:</label>
+        @Html.TextBoxFor(m => m.SecurityAnswer, new { @maxlength = "200", @id = "txtSecurityAnswer" })
+      </div>
+      <div class="rowTable">
+        <label>PasswordResetToken:</label>
+        @Html.TextBoxFor(m => m.PasswordResetToken, new { @maxlength = "500", @id = "txtPasswordResetToken" })
+      </div>
+      <div class="rowTable">
+        <label>EmailConfirmationToken:</label>
+        @Html.TextBoxFor(m => m.EmailConfirmationToken, new { @maxlength = "500", @id = "txtEmailConfirmationToken" })
+      </div>
+   </div>
+   <div class="col-sm-3">
+      <div class="rowTable">
+        <label>PasswordResetExpiry:</label>
+        @Html.TextBoxFor(m => m.PasswordResetExpiry,"{0:MM/dd/yyyy}", new { @maxlength = "10", @id = "dtPasswordResetExpiry" })
+      </div>
+      <div class="rowTable">
+        <label>PanNumber:</label>
+        @Html.TextBoxFor(m => m.PanNumber, new { @maxlength = "100", @id = "txtPanNumber" })
+      </div>
+      <div class="rowTable">
+        <label>AddressProof:</label>
+        @Html.TextBoxFor(m => m.AddressProof, new { @maxlength = "100", @id = "txtAddressProof" })
+      </div>
+      <div class="rowTable">
+        <label>CreatedBy:</label>
+        @Html.TextBoxFor(m => m.CreatedBy, new { @maxlength = "10", @id = "txtCreatedBy" })
+      </div>
+      <div class="rowTable">
+        <label>CreatedDate:</label>
+        @Html.TextBoxFor(m => m.CreatedDate,"{0:MM/dd/yyyy}", new { @maxlength = "10", @id = "dtCreatedDate" })
+      </div>
+   </div>
+    <div class="clear"></div>
+
+    <div class="btn-group">
+        <div style="float: left;">
+            @if (Model.UsersID != null && Model.UsersID != 0)
+            {  
+                <input type="submit" class="btn btn-primary edit-btn marginBtn" value="Update" onclick="return SaveUsers();" />                
+            }
+            else
+            {
+                <input type="submit" onclick="return SaveUsers();" class="btn btn-primary edit-btn marginBtn" value="Save" />                
+            }
+            <button name="ClientCancel" class="btn btn-primary edit-btn marginBtn" type="button" onclick="return ClearAll();">Cancel</button>            
+        </div>
+    </div>
+
+
+
+</div>

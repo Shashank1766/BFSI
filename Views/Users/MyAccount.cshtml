@@ -1,0 +1,263 @@
+﻿@using BidKaro.Model;
+@model Users
+
+@{
+    ViewBag.Title = "My Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container full-height sm-p-t-30">
+    <div class="container-sm-height full-height">
+        <div class=" panel panel-body panel-default padding-10">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="font-montserrat all-caps hint-text">My Account Details</h5>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <h5 class="semi-bold m-t-0">Personal Information</h5>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Login ID:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.UserName</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Password:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.Password [Change Password]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>First Name:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.FirstName</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Last Name:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.LastName</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>PAN NO.:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.PanNumber</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <h5 class="semi-bold m-t-0">Auction Information</h5>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Total Deposit:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Total Buying Limit:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Available Buying Limit:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <h5 class="semi-bold m-t-0">Contact Information</h5>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>ContactAddress:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.Address</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>City:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.CityID</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>State:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.StateID</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Country:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>PinCode:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>PrimaryPhone:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.MobileNumber</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>SecondaryPhone:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Fax:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">NA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.EmailId</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-5 m-l-15">
+                        <button class="btn btn-orange-sm m-t-10" type="submit">Edit Contact Information</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <h5 class="semi-bold m-t-0">Account Information</h5>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>Vehicle Type:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">2w 4w CV CE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>RegistrationDate:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20">@Model.CreatedDate.Value.ToShortDateString()</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <label>DOA:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="bold sm-p-t-20"> @Model.CreatedDate.Value.ToShortDateString()</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

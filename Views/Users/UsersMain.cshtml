@@ -1,0 +1,132 @@
+﻿@using BidKaro.Models
+
+@model UsersView
+
+@{
+    ViewBag.Title = "Users View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .home {
+        -webkit-box-shadow: 10px 10px 1px 0px;
+        margin: 4px 31px 62px 41px;
+        border: 6px solid #E6E6FA;
+        box-shadow: 10px 10px 1px 0px;
+        width: 150px;
+        height: 65px;
+        float: left;
+        text-align: center;
+        background-color: #5c7499;
+    }
+</style>
+
+<div class="container full-height sm-p-t-30">
+    <div class="container-sm-height full-height">
+        <div class="row p-t-15">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <ul data-init-reponsive-tabs="collapse" role="tablist" class="nav nav-tabs nav-tabs-simple">
+                        <li class="active">
+                            <a role="tab" data-toggle="tab" href="#tabUnverifiedUsers">Unverified users</a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab" href="#tabVerifiedUsers"> Verified users</a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab" href="#tabTrainedUsers">Trained buyers</a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab" href="#tabBlockedUsers"> Blocked bidder</a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab" href="#tabRejectedUsers"> Rejected</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tabUnverifiedUsers" class="tab-pane active">
+                            <div class="row column-seperation">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" id="txtUnverifiedUsers" class="form-control pull-right" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="">
+                                        @{Html.RenderPartial("~/Views/Users/UserControls/_UnverifiedUsersList.cshtml", Model.UsersList);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tabVerifiedUsers" class="tab-pane active">
+                            <div class="row column-seperation">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" id="txtVerifiedUsers" class="form-control pull-right" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="">
+                                        @{Html.RenderPartial("~/Views/Users/UserControls/_VerifiedUsersList.cshtml", Model.UsersList);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tabTrainedUsers" class="tab-pane active">
+                            <div class="row column-seperation">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" id="txtTrainedUsers" class="form-control pull-right" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="">
+                                        @{Html.RenderPartial("~/Views/Users/UserControls/_TrainedUsersList.cshtml", Model.UsersList);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tabBlockedUsers" class="tab-pane active">
+                            <div class="row column-seperation">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" id="txtBlockedUsers" class="form-control pull-right" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="">
+                                        @{Html.RenderPartial("~/Views/Users/UserControls/_BlockedUsersList.cshtml", Model.UsersList);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tabRejectedUsers" class="tab-pane active">
+                            <div class="row column-seperation">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" id="txtRejectedUsers" class="form-control pull-right" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="">
+                                        @{Html.RenderPartial("~/Views/Users/UserControls/_RejectedUsersList.cshtml", Model.UsersList);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
