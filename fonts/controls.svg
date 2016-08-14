@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+<metadata>
+Created by FontForge 20120731 at Thu Dec  4 22:22:11 2014
+ By Orthosie Webhosting
+Copyright (C) 2014 by original authors @ fontello.com
+</metadata>
+<defs>
+<font id="controlsRegularRegular" horiz-adv-x="265" >
+  <font-face 
+    font-family="controlsRegularRegular"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="850"
+    descent="-150"
+    bbox="0 0 530 700"
+    underline-thickness="0"
+    underline-position="10"
+    unicode-range="U+E800-E803"
+  />
+<missing-glyph horiz-adv-x="1000" 
+ />
+    <glyph glyph-name=".notdef" horiz-adv-x="1000" 
+ />
+    <glyph glyph-name=".notdef" horiz-adv-x="1000" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="left-open-mini" unicode="&#xe800;" 
+d="M252 180q26 -26 0 -48q-26 -26 -48 0l-192 194q-24 24 0 50l192 194q22 26 48 0q26 -22 0 -48l-156 -172z" />
+    <glyph glyph-name="right-open-mini" unicode="&#xe801;" 
+d="M13 180l158 170l-158 172q-26 26 0 48q26 26 48 0l192 -194q24 -26 0 -50l-192 -194q-22 -26 -48 0q-26 22 0 48z" />
+    <glyph glyph-name="right-dir-1" unicode="&#xe802;" horiz-adv-x="400" 
+d="M0 580l400 -230l-400 -230v460z" />
+    <glyph glyph-name="pause" unicode="&#xe803;" horiz-adv-x="530" 
+d="M440 700q90 0 90 -64v-570q0 -66 -90 -66t-90 66v570q0 64 90 64zM90 700q90 0 90 -64v-570q0 -66 -90 -66t-90 66v570q0 64 90 64z" />
+  </font>
+</defs></svg>
