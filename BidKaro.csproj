@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAD924ED-76D8-4553-9717-507365917B63}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BidKaro</RootNamespace>
+    <AssemblyName>BidKaro</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\controls.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="fonts\montserrat-bold-webfont.svg" />
+    <Content Include="fonts\montserrat-regular-webfont.svg" />
+    <Content Include="FrontEnd\css\bootstrap-glyphicons.css" />
+    <Content Include="FrontEnd\css\bootstrap-theme.css" />
+    <Content Include="FrontEnd\css\bootstrap-theme.min.css" />
+    <Content Include="FrontEnd\css\bootstrap.css" />
+    <Content Include="FrontEnd\css\bootstrap.min.css" />
+    <Content Include="FrontEnd\css\font-awesome.min.css" />
+    <Content Include="FrontEnd\css\navbar-static-top.css" />
+    <Content Include="FrontEnd\css\navbar.css" />
+    <Content Include="FrontEnd\css\pages.css" />
+    <Content Include="FrontEnd\css\reset.css" />
+    <Content Include="FrontEnd\css\select2.css" />
+    <Content Include="FrontEnd\css\toastNotification\toastr.css" />
+    <Content Include="FrontEnd\css\toastNotification\toastr.min.css" />
+    <Content Include="FrontEnd\images\dropdown_arrow.png" />
+    <Content Include="FrontEnd\js\dataTables.bootstrap.js" />
+    <Content Include="FrontEnd\js\datatables.js" />
+    <Content Include="FrontEnd\js\datatables.responsive.js" />
+    <Content Include="FrontEnd\js\dataTables.tableTools.min.js" />
+    <Content Include="FrontEnd\js\form_elements.js" />
+    <Content Include="FrontEnd\js\jquery-datatable-bootstrap.js" />
+    <Content Include="FrontEnd\js\jquery.dataTables.min.js" />
+    <Content Include="FrontEnd\js\jquery.validate.js" />
+    <Content Include="FrontEnd\js\jquery.validate.min.js" />
+    <Content Include="FrontEnd\js\lodash.min.js" />
+    <Content Include="FrontEnd\js\pages.js" />
+    <Content Include="FrontEnd\js\pages.min.js" />
+    <Content Include="FrontEnd\js\select2.js" />
+    <Content Include="FrontEnd\js\select2.min.js" />
+    <Content Include="FrontEnd\style.css" />
+    <Content Include="FrontEnd\css\styles.min.css" />
+    <Content Include="FrontEnd\fonts\controls.svg" />
+    <Content Include="FrontEnd\fonts\fontawesome-webfont.svg" />
+    <Content Include="FrontEnd\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontEnd\fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="FrontEnd\fonts\montserrat-bold-webfont.svg" />
+    <Content Include="FrontEnd\fonts\montserrat-regular-webfont.svg" />
+    <Content Include="FrontEnd\images\faq-icon.png" />
+    <Content Include="FrontEnd\images\header-img.png" />
+    <Content Include="FrontEnd\images\logo.png" />
+    <Content Include="FrontEnd\js\bootstrap.js" />
+    <Content Include="FrontEnd\js\bootstrap.min.js" />
+    <Content Include="FrontEnd\js\jquery.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\additional-methods.js" />
+    <Content Include="Scripts\AuditLog\AuditLogScript.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FrontEnd\css\bootstrap-theme.css.map" />
+    <Content Include="FrontEnd\fonts\Armata-Regular.ttf" />
+    <Content Include="FrontEnd\fonts\controls.eot" />
+    <Content Include="FrontEnd\fonts\controls.ttf" />
+    <Content Include="FrontEnd\fonts\controls.woff" />
+    <Content Include="FrontEnd\fonts\controls.woff2" />
+    <Content Include="FrontEnd\fonts\fontawesome-webfont.eot" />
+    <Content Include="FrontEnd\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FrontEnd\fonts\fontawesome-webfont.woff" />
+    <Content Include="FrontEnd\fonts\FontAwesome.otf" />
+    <Content Include="FrontEnd\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FrontEnd\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="FrontEnd\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="FrontEnd\fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="FrontEnd\fonts\glyphiconshalflings-regular.otf" />
+    <Content Include="FrontEnd\fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="FrontEnd\fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="FrontEnd\fonts\Montserrat-Bold.ttf" />
+    <Content Include="FrontEnd\fonts\Montserrat-Regular.ttf" />
+    <Content Include="fonts\Armata-Regular.ttf" />
+    <Content Include="fonts\controls.eot" />
+    <Content Include="fonts\controls.ttf" />
+    <Content Include="fonts\controls.woff" />
+    <Content Include="fonts\controls.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="fonts\glyphiconshalflings-regular.otf" />
+    <Content Include="fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="fonts\Montserrat-Bold.ttf" />
+    <Content Include="fonts\Montserrat-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\SampleMVCPublish.pubxml" />
+    <Content Include="Scripts\BidDetails\BidDetailsScript.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ClearForm.js" />
+    <Content Include="Scripts\Common\Base.js" />
+    <Content Include="Scripts\FrontPage\FrontPage.js" />
+    <Content Include="Scripts\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr1250.js" />
+    <Content Include="Scripts\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\i18n\grid.locale-vi.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MasterScreens\MasterScreen.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Register\Register.js" />
+    <Content Include="Scripts\ToastNotification\toastr.js" />
+    <Content Include="Scripts\Users\UsersScript.js" />
+    <Content Include="Scripts\ValidationEngine\css\screenshot.png" />
+    <Content Include="Scripts\ValidationEngine\css\template.css" />
+    <Content Include="Scripts\ValidationEngine\css\validationEngine.jquery.css" />
+    <Content Include="Scripts\ValidationEngine\js\contrib\other-validations.js" />
+    <Content Include="Scripts\ValidationEngine\js\jquery-1.6.min.js" />
+    <Content Include="Scripts\ValidationEngine\js\jquery.validationEngine.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-cz.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-da.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-de.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-en.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-es.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-et.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-fa.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-fi.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-fr.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-hr.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-hu.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-it.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-ja.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-nl.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-pl.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-pt.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-ro.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-ru.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-sv.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-tr.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-vi.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Scripts\ValidationEngine\js\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\CommonConfig.cs" />
+    <Compile Include="Common\HttpContextSessionWrapperExtension.cs" />
+    <Compile Include="Common\ReCaptcha.cs" />
+    <Compile Include="Common\ServiceFunctions.cs" />
+    <Compile Include="Common\WebClientWrapper.cs" />
+    <Compile Include="Common\WebRequestWrapper.cs" />
+    <Compile Include="Controllers\AuditLogController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BidDetailsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterScreenController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="ElmahErrorAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpUrlEncryptionModule.cs" />
+    <Compile Include="Interface\ISessionWrapper.cs" />
+    <Compile Include="Models\AuditLogViews.cs" />
+    <Compile Include="Models\BidDetailsViews.cs" />
+    <Compile Include="Models\GlobalCaodeCategoryView.cs" />
+    <Compile Include="Models\UsersViews.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebCommunicator\BaseWebCommunicator.cs" />
+    <Compile Include="WebCommunicator\HomeWebCommunicator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\login1.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\AuditLog\AuditLogMain.cshtml" />
+    <Content Include="Views\AuditLog\UserControls\_AuditLogAddEdit.cshtml" />
+    <Content Include="Views\AuditLog\UserControls\_AuditLogList.cshtml" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Views\Users\UserControls\_UsersAddEdit.cshtml" />
+    <Content Include="Views\Users\UserControls\_UnverifiedUsersList.cshtml" />
+    <Content Include="Views\Users\Register.cshtml" />
+    <Content Include="Views\Users\RegisterNew.cshtml" />
+    <Content Include="Views\BidDetails\BidDetailsMain.cshtml" />
+    <Content Include="Views\BidDetails\UserControls\_BidDetailsAddEdit.cshtml" />
+    <Content Include="Views\BidDetails\UserControls\_BidDetailsList.cshtml" />
+    <Content Include="Views\Users\UsersMain.cshtml" />
+    <Content Include="Views\Shared\_Timer.cshtml" />
+    <Content Include="Views\Users\MyAccount.cshtml" />
+    <Content Include="Views\MasterScreen\Index.cshtml" />
+    <Content Include="Views\MasterScreen\UserControls\_AddEditform.cshtml" />
+    <Content Include="Views\MasterScreen\UserControls\_ListingVIew.cshtml" />
+    <Content Include="Views\Users\UserControls\_VerifiedUsersList.cshtml" />
+    <Content Include="Views\Users\UserControls\_TrainedUsersList.cshtml" />
+    <Content Include="Views\Users\UserControls\_RejectedUsersList.cshtml" />
+    <Content Include="Views\Users\UserControls\_BlockedUsersList.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BidKaro.BusinessAccess\BidKaro.BusinessAccess.csproj">
+      <Project>{c367022d-315e-446e-8107-f92a5dd48d5d}</Project>
+      <Name>BidKaro.BusinessAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BidKaro.Common\BidKaro.Common.csproj">
+      <Project>{fbb84bed-32e9-463e-800b-4a5684c5eb7d}</Project>
+      <Name>BidKaro.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BidKaro.Model\BidKaro.Model.csproj">
+      <Project>{fd2cc211-5eeb-4d1e-ab7f-fea9bfa840f3}</Project>
+      <Name>BidKaro.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFSI.BusinessAccess\BidKaro.BusinessAccess.csproj">
+      <Project>{c367022d-315e-446e-8107-f92a5dd48d5d}</Project>
+      <Name>BidKaro.BusinessAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFSI.Model\BidKaro.Model.csproj">
+      <Project>{fd2cc211-5eeb-4d1e-ab7f-fea9bfa840f3}</Project>
+      <Name>BidKaro.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61239</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58697/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
